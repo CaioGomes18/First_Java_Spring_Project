@@ -12,40 +12,49 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_user")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idUser;
-	private String nomeUser;
-	private String emailUser;
+	private Long id;
+	private String name;
+	private String email;
 	
-	
-	//esse atributo faz uma conexão ao departamento que o usuário pertence
 	@ManyToOne
 	@JoinColumn(name = "department_id")
-	private Department departamentoUser;
+	private Department department;
 	
-	public User() {}
-	
-	public long getIdUser() {
-		return idUser;
+	public User() {
 	}
-	public void setIdUser(long idUser) {
-		this.idUser = idUser;
+
+	public Long getId() {
+		return id;
 	}
-	public String getNomeUser() {
-		return nomeUser;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
-	public void setNomeUser(String nomeUser) {
-		this.nomeUser = nomeUser;
+
+	public String getName() {
+		return name;
 	}
-	public String getEmailUser() {
-		return emailUser;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setEmailUser(String emailUser) {
-		this.emailUser = emailUser;
+
+	public String getEmail() {
+		return email;
 	}
-	
-	
-	
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 }

@@ -7,37 +7,30 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_departent")
+@Table(name = "tb_department")
 public class Department {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String nome;
+	private Long id;
+	private String name;
 	
-	
-	public Department() {}
+	public Department() {
+	}
 
-
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
-	
 }
